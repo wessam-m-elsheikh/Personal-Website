@@ -1,0 +1,65 @@
+/* FONTS */
+/* font-family: 'Lato', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+
+:root {
+  --red: #d32121;
+  --pink: #ed8d8d;
+  --light-pink: #ffe2e2;
+  --grey: #3c4048;
+  --light-grey: #aaa;
+}
+
+/* --------------- RESETS -------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* -------------------- GENERAL ------------------ */
+body {
+  color: var(--grey);
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  color: var(--red);
+}
+p {
+  color: var(--grey);
+}
+
+.container {
+  background-color: var(--light-pink);
+}
+
+/* -------------------- NAVBAR ------------------ */
