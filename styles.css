@@ -8,6 +8,12 @@
   --light-pink: #ffe2e2;
   --grey: #3c4048;
   --light-grey: #aaa;
+
+  --container-desktop: 80%;
+  --container-tablet: 90%;
+  --container-mobile: 95%;
+
+  --transition: all 0.4s ease;
 }
 
 /* --------------- RESETS -------------------- */
@@ -24,7 +30,20 @@ a:visited {
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
+  font-family: inherit;
   cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 html {
@@ -58,8 +77,189 @@ p {
   color: var(--grey);
 }
 
-.container {
+/* button */
+.frame {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  border: 2.5px solid var(--grey);
+  transform: translate(6px, 6px);
+  position: relative;
+  margin-top: 3rem;
+}
+
+.btn {
+  background-color: var(--grey);
+  border-radius: 3px;
+  padding: 1rem;
+  transform: translate(-6px, -6px) scale(1.05);
+  transition: var(--transition);
+}
+
+.btn a {
+  color: var(--light-pink);
+}
+
+.btn:hover {
+  transform: translate(-0.5px, 0.5px) scale(1.05);
+}
+
+/* section & container */
+.section-bg {
   background-color: var(--light-pink);
 }
 
+.container {
+  width: var(--container-desktop);
+  margin: 0 auto;
+}
+
 /* -------------------- NAVBAR ------------------ */
+.welcome-section {
+  min-height: 100vh;
+  /* position: relative; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--grey);
+  padding: 5px;
+}
+
+.nav-link:hover {
+  background-color: var(--grey);
+  color: var(--light-pink);
+}
+
+/* DROP-DOWN MENU */
+.drop-down-open,
+.drop-down-close {
+  display: none;
+  position: fixed;
+  top: 12px;
+  right: 5%;
+  z-index: 11;
+}
+
+.uil {
+  color: var(--grey);
+  border: none;
+  font-size: 3rem;
+  font-weight: 700;
+
+  position: relative;
+}
+/* -------------------- HEADER ------------------ */
+header {
+  width: 80%;
+  /* position: absolute; */
+  /* top: 50%; */
+  transform: translateY(40%);
+}
+
+.heading-1 {
+  margin-bottom: 2.5rem;
+}
+
+.highlight {
+  display: inline-block;
+  padding: 0.4rem;
+  /* color: inherit; */
+  font-weight: 400;
+  color: var(--red);
+  background-color: rgba(240, 245, 12, 0.6);
+  transform: skewX(-13deg);
+}
+
+/* -------------------- MEDIA QUERIES ------------------ */
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: var(--container-tablet);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .nav-list {
+    position: absolute;
+    top: 4.5rem;
+    right: 5.5%;
+    display: none;
+    flex-direction: column;
+    background-color: var(--grey);
+    gap: 0;
+  }
+  .nav-item {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    transition: var(--transition);
+  }
+
+  .nav-item:hover {
+    background-color: #ed8d8d;
+    color: var(--grey);
+  }
+  .nav-link {
+    color: var(--light-pink);
+  }
+  .nav-item:hover .nav-link {
+    background-color: transparent;
+    color: var(--grey);
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: var(--container-mobile);
+  }
+
+  header {
+    width: 90%;
+  }
+
+  header p {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .drop-down-open,
+  .drop-down-close {
+    right: 2.5%;
+  }
+
+  .nav-list {
+    right: 3.5%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .heading-1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-section {
+    min-height: fit-content;
+  }
+
+  header {
+    transform: translateY(0);
+    padding: 5rem 0;
+  }
+}

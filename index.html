@@ -13,52 +13,63 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"> -->
     </script>
+
+    <!-- iconscout CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
     <!-- MY CSS -->
     <link rel="stylesheet" href="styles.css">
     <title>Wessam Elsheikh</title>
 </head>
 
 <body>
-    <div class="container">
-        <nav>
-            <div class="nav-logo">
-                <img src="imgs/wessam.svg" alt="logo">
-            </div>
-            <ul class="nav-list">
-                <li class="nav-items">
-                    <a class="nav-link" href="#projects">my work</a>
-                </li>
-                <li class="nav-items">
-                    <a class="nav-link" href="#contact-me">contact me</a>
-                </li>
-            </ul>
-            <button class="menu">
-                <div class="drop-menu">
-                    <a class="nav-link" href="#projects">my work</a>
-                    <a class="nav-link" href="#contact-me">contact me</a>
+    <div class="welcome-section | section-bg">
+        <div class="container">
+            <nav>
+                <div class="nav-logo">
+                    <img src="imgs/wessam.svg" alt="logo">
                 </div>
-            </button>
-        </nav>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">my work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-me">contact me</a>
+                    </li>
+                </ul>
+            </nav>
 
-        <header>
-            <h1 class="heading-1">
-                hi,
-                <span class="highlight">i'm wessam,</span>
-            </h1>
-            <h1 class="heading-1">web developer & web designer</h1>
-            <p class="text">
-                I design and build beautiful, fully responsive and modern looking
-                websites using HTML, CSS, Bootstrap and JAVASCRIPT. I can build and
-                edit websites on webflow Too.
-            </p>
-            <div class="frame">
-                <button class="btn">
-                    <a href="https://github.com/wessam-m-elsheikh" id="profile-link" target="_blank">Github
-                        profile</a>
-                </button>
-            </div>
-        </header>
+            <!-- open and close menu -->
+            <button class="drop-down-open">
+                <i class="uil uil-bars"></i>
+            </button>
+            <button class="drop-down-close">
+                <i class="uil uil-times"></i>
+            </button>
+
+            <header>
+                <div class="heading-1">
+                    <h1>
+                        hi,
+                        <mark class="highlight">i'm wessam,</mark>
+                    </h1>
+                    <h1>web developer & web designer</h1>
+                </div>
+                <p class="text">
+                    I design and build beautiful, fully responsive and modern looking
+                    websites using HTML, CSS, Bootstrap and JAVASCRIPT. I can build and
+                    edit websites on webflow Too.
+                </p>
+                <div class="frame">
+                    <button class="btn">
+                        <a href="https://github.com/wessam-m-elsheikh" id="profile-link" target="_blank">Github
+                            profile</a>
+                    </button>
+                </div>
+            </header>
+        </div>
     </div>
+
 
     <!-- <main>
         <section id="projects" class="container">
@@ -236,6 +247,8 @@
         <a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Ruslan
             Babkin - Flaticon</a>
     </footer> -->
+
+    <script src="script.js"></script>
 </body>
 
 </html>
