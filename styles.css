@@ -163,8 +163,8 @@ nav {
 .drop-down-close {
   display: none;
   position: absolute;
-  top: 12px;
-  right: 5%;
+  top: 29px;
+  right: 7%;
   z-index: 11;
 }
 
@@ -207,32 +207,30 @@ header {
   position: relative;
 }
 
-.slider {
+.slider-btn {
+  width: 3rem;
+  position: absolute;
+}
+.carousel-control-prev {
+  left: -6.5%;
+}
+.carousel-control-next {
+  right: -6.5%;
+}
+.carousel-control-prev-icon {
+  background-image: url(imgs/left-arrow.png);
+}
+.carousel-control-next-icon {
+  background-image: url(imgs/right-arrow.png);
 }
 
-.slide {
+.slide-card {
   display: grid;
   grid-template-columns: 30% calc(70% - 3rem);
   gap: 3rem;
   place-items: center stretch;
 }
-.slide-content {
-}
 
-.slide-img {
-}
-.slider-btn {
-  width: 3rem;
-  position: absolute;
-  top: 55%;
-}
-
-.slider-btn-right {
-  right: -6.5%;
-}
-.slider-btn-left {
-  left: -6.5%;
-}
 /* -------------------- SKILLS ------------------ */
 /* -------------------- CONTACTS ------------------ */
 /* -------------------- FOOTER ------------------ */
@@ -252,20 +250,29 @@ header {
     transform: translateY(0);
     padding: 4rem 0;
   }
-
-  .slide {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .carousel-control-prev {
+    left: -13%;
   }
-  .slider-btn {
-    top: 65%;
+  .carousel-control-next {
+    right: -13%;
+  }
+
+  .projects-container {
+    width: 85%;
+    gap: 1rem;
+  }
+
+  .slide-card {
+    grid-template-columns: 1fr;
+    gap: 1;
+    padding: 1rem;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .nav-list {
     position: absolute;
-    top: 4.5rem;
+    top: 6.5rem;
     right: 5.5%;
     display: none;
     flex-direction: column;
@@ -289,18 +296,6 @@ header {
     background-color: transparent;
     color: var(--grey);
     font-weight: 600;
-  }
-
-  .projects-container {
-    width: 85%;
-    gap: 1rem;
-  }
-
-  .slider-btn-right {
-    right: -13%;
-  }
-  .slider-btn-left {
-    left: -13%;
   }
 }
 
@@ -334,7 +329,6 @@ header {
 
   .slider-btn {
     width: 2rem;
-    top: 65%;
   }
 }
 
@@ -344,10 +338,5 @@ header {
   }
   .heading-1 {
     margin-bottom: 1.5rem;
-  }
-
-  .slider-btn {
-    width: 1.5rem;
-    top: 75%;
   }
 }
