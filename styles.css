@@ -10,8 +10,8 @@
   --light-grey: #aaa;
 
   --container-desktop: 80%;
-  --container-tablet: 90%;
-  --container-mobile: 95%;
+  --container-tablet: 85%;
+  --container-mobile: 90%;
 
   --transition: all 0.4s ease;
 }
@@ -41,6 +41,10 @@ button {
   cursor: pointer;
 }
 
+img {
+  width: 100%;
+}
+
 ul,
 ol {
   list-style: none;
@@ -58,21 +62,31 @@ body {
   font-weight: 400;
   letter-spacing: 1px;
   font-size: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 h1,
 h2,
-h3 {
+h4 {
   text-transform: capitalize;
+  letter-spacing: 2px;
 }
 
 h1 {
   font-size: 5rem;
 }
 h2 {
-  color: var(--red);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
+
+h4 {
+  color: var(--red);
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
 p {
   color: var(--grey);
 }
@@ -111,6 +125,7 @@ p {
 
 .container {
   width: var(--container-desktop);
+  padding: 3rem 0 7rem;
   margin: 0 auto;
 }
 
@@ -124,12 +139,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .nav-list {
   display: flex;
   gap: 1.5rem;
+  z-index: 100;
 }
 
 .nav-link {
@@ -146,7 +162,7 @@ nav {
 .drop-down-open,
 .drop-down-close {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 12px;
   right: 5%;
   z-index: 11;
@@ -163,9 +179,7 @@ nav {
 /* -------------------- HEADER ------------------ */
 header {
   width: 80%;
-  /* position: absolute; */
-  /* top: 50%; */
-  transform: translateY(40%);
+  transform: translateY(30%);
 }
 
 .heading-1 {
@@ -174,7 +188,7 @@ header {
 
 .highlight {
   display: inline-block;
-  padding: 0.4rem;
+  padding: 0.2rem;
   /* color: inherit; */
   font-weight: 400;
   color: var(--red);
@@ -182,10 +196,69 @@ header {
   transform: skewX(-13deg);
 }
 
+/* -------------------- PROJECTS ------------------ */
+.projects-container {
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider {
+}
+
+.slide {
+  display: grid;
+  grid-template-columns: 30% calc(70% - 3rem);
+  gap: 3rem;
+  place-items: center stretch;
+}
+.slide-content {
+}
+
+.slide-img {
+}
+.slider-btn {
+  width: 3rem;
+  position: absolute;
+  top: 55%;
+}
+
+.slider-btn-right {
+  right: -6.5%;
+}
+.slider-btn-left {
+  left: -6.5%;
+}
+/* -------------------- SKILLS ------------------ */
+/* -------------------- CONTACTS ------------------ */
+/* -------------------- FOOTER ------------------ */
+
 /* -------------------- MEDIA QUERIES ------------------ */
 @media only screen and (max-width: 1024px) {
   .container {
     width: var(--container-tablet);
+  }
+
+  .welcome-section {
+    min-height: fit-content;
+  }
+
+  header {
+    width: 90%;
+    transform: translateY(0);
+    padding: 4rem 0;
+  }
+
+  .slide {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .slider-btn {
+    top: 65%;
   }
 }
 
@@ -217,15 +290,23 @@ header {
     color: var(--grey);
     font-weight: 600;
   }
+
+  .projects-container {
+    width: 85%;
+    gap: 1rem;
+  }
+
+  .slider-btn-right {
+    right: -13%;
+  }
+  .slider-btn-left {
+    left: -13%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .container {
     width: var(--container-mobile);
-  }
-
-  header {
-    width: 90%;
   }
 
   header p {
@@ -244,6 +325,17 @@ header {
   .nav-list {
     right: 3.5%;
   }
+
+  .projects-container h2,
+  .projects-container h4,
+  .projects-container p {
+    margin-bottom: 1rem;
+  }
+
+  .slider-btn {
+    width: 2rem;
+    top: 65%;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -254,12 +346,8 @@ header {
     margin-bottom: 1.5rem;
   }
 
-  .welcome-section {
-    min-height: fit-content;
-  }
-
-  header {
-    transform: translateY(0);
-    padding: 5rem 0;
+  .slider-btn {
+    width: 1.5rem;
+    top: 75%;
   }
 }
