@@ -14,6 +14,7 @@
   --container-mobile: 90%;
 
   --transition: all 0.4s ease;
+  --shadow: 0 1rem 2rem rgba(0 0 0/ 0.3);
 }
 
 /* --------------- RESETS -------------------- */
@@ -23,6 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 a,
 a:link,
@@ -39,6 +41,12 @@ button {
   background-color: transparent;
   font-family: inherit;
   cursor: pointer;
+}
+button::-moz-focus-outer,
+button:active {
+  outline: none;
+  border: 0;
+  padding: 0;
 }
 
 img {
@@ -106,7 +114,6 @@ p {
   background-color: var(--grey);
   border-radius: 3px;
   padding: 1rem;
-  transform: translate(-6px, -6px) scale(1.05);
   transition: var(--transition);
 }
 
@@ -114,9 +121,15 @@ p {
   color: var(--light-pink);
 }
 
+/* animation for specific buttons */
+.welcome-section-btn,
+.project-btn {
+  transform: translate(-6px, -6px) scale(1.05);
+  transition: var(--transition);
+}
 @media (hover: hover) and (pointer: fine) {
-  .btn:hover,
-  .btn:focus-visible {
+  .welcome-section-btn:hover,
+  .project-btn:hover {
     transform: translate(-0.5px, 0.5px) scale(1.05);
   }
 }
@@ -273,6 +286,63 @@ header {
   background-color: var(--grey);
   color: var(--light-pink);
 }
+/* ----------- Additional Notable Projects ------------ */
+.additional-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.project-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 2rem;
+}
+.card {
+  flex-basis: 27rem;
+  height: 20rem;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: var(--transition);
+}
+
+.card-img {
+  /* width: 90%; */
+  /* margin: 0 auto; */
+  width: 23rem;
+  height: fit-content;
+  /* margin-bottom: 1rem; */
+  position: absolute;
+  box-shadow: var(--shadow);
+}
+.card-content {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card-content p {
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  height: 43rem;
+}
+.card:hover .card-content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 16rem;
+  transition-delay: 0.3s;
+}
+
+/* -------------------- skills ------------------ */
+/* -------------------- contact me ------------------ */
 /* -------------------- FOOTER ------------------ */
 
 /* -------------------- MEDIA QUERIES ------------------ */
