@@ -222,6 +222,12 @@ header {
   margin: 0 auto;
   position: relative;
 }
+.slide-card {
+  display: grid;
+  grid-template-columns: 30% calc(70% - 3rem);
+  gap: 3rem;
+  place-items: center stretch;
+}
 
 .slider-btn {
   width: 3rem;
@@ -240,14 +246,66 @@ header {
   background-image: url(imgs/right-arrow.png);
 }
 
-.slide-card {
-  display: grid;
-  grid-template-columns: 30% calc(70% - 3rem);
-  gap: 3rem;
-  place-items: center stretch;
+.carousel-item {
+  font-family: inherit;
 }
 
 /* -------------------- SKILLS ------------------ */
+
+/* ----------- Additional Notable Projects ------------ */
+.additional-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.project-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 4rem;
+}
+.card {
+  flex-basis: 27rem;
+  height: 20rem;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: var(--transition);
+}
+
+.card-img {
+  width: 23rem;
+  align-self: center;
+  height: fit-content;
+  position: absolute;
+  top: -2rem;
+  box-shadow: var(--shadow);
+}
+.card-content {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card-content p {
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  height: 43rem;
+}
+.card:hover .card-content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 16rem;
+  transition-delay: 0.3s;
+}
+
 /* -------------------- CONTACTS ------------------ */
 .contact-me {
   display: flex;
@@ -286,63 +344,7 @@ header {
   background-color: var(--grey);
   color: var(--light-pink);
 }
-/* ----------- Additional Notable Projects ------------ */
-.additional-projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-}
-.project-cards {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  /* align-items: center; */
-  justify-content: center;
-  gap: 2rem;
-}
-.card {
-  flex-basis: 27rem;
-  height: 20rem;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: var(--shadow);
-  position: relative;
-  transition: var(--transition);
-}
 
-.card-img {
-  /* width: 90%; */
-  /* margin: 0 auto; */
-  width: 23rem;
-  height: fit-content;
-  /* margin-bottom: 1rem; */
-  position: absolute;
-  box-shadow: var(--shadow);
-}
-.card-content {
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.card-content p {
-  margin-bottom: 2rem;
-  transition: var(--transition);
-}
-
-.card:hover {
-  height: 43rem;
-}
-.card:hover .card-content {
-  visibility: visible;
-  opacity: 1;
-  margin-top: 16rem;
-  transition-delay: 0.3s;
-}
-
-/* -------------------- skills ------------------ */
-/* -------------------- contact me ------------------ */
 /* -------------------- FOOTER ------------------ */
 
 /* -------------------- MEDIA QUERIES ------------------ */
@@ -413,6 +415,11 @@ header {
     font-weight: 600;
   }
 
+  .project-cards .card {
+    flex-basis: 30rem;
+    flex-shrink: 1;
+  }
+
   .contact-me {
     flex-direction: column;
   }
@@ -460,5 +467,9 @@ header {
   }
   .heading-1 {
     margin-bottom: 1.5rem;
+  }
+
+  .additional-projects h2 {
+    text-align: center;
   }
 }
