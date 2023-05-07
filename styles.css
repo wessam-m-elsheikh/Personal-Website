@@ -416,8 +416,7 @@ header {
   }
 
   .project-cards .card {
-    flex-basis: 30rem;
-    flex-shrink: 1;
+    flex-basis: 32rem;
   }
 
   .contact-me {
