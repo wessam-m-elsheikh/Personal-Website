@@ -8,6 +8,7 @@
   --light-pink: #ffe2e2;
   --grey: #3c4048;
   --light-grey: #aaa;
+  --black: #000;
 
   --container-desktop: 80%;
   --container-tablet: 85%;
@@ -99,6 +100,13 @@ p {
   color: var(--grey);
 }
 
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 /* button */
 .frame {
   width: fit-content;
@@ -119,6 +127,8 @@ p {
 
 .btn a {
   color: var(--light-pink);
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 /* animation for specific buttons */
@@ -160,20 +170,18 @@ nav {
 
 .nav-list {
   display: flex;
-  gap: 1.5rem;
-  z-index: 100;
+  padding: 0;
 }
 
 .nav-link {
   color: var(--grey);
-  padding: 5px;
+  transition: var(--transition);
 }
 
 .nav-link:hover {
-  background-color: var(--grey);
   color: var(--light-pink);
+  background-color: var(--grey);
 }
-
 /* DROP-DOWN MENU */
 .drop-down-open,
 .drop-down-close {
@@ -250,8 +258,6 @@ header {
   font-family: inherit;
 }
 
-/* -------------------- SKILLS ------------------ */
-
 /* ----------- Additional Notable Projects ------------ */
 .additional-projects {
   display: flex;
@@ -306,21 +312,29 @@ header {
   transition-delay: 0.3s;
 }
 
-/* -------------------- CONTACTS ------------------ */
-.contact-me {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
+/* -------------------- SKILLS ------------------ */
+.skills-content {
+  width: 60%;
 }
+.skills-content p {
+  color: var(--black);
+  margin-bottom: 2rem;
+}
+.skills-content .icons {
+  gap: 1rem;
+}
+
+/* -------------------- CONTACTS ------------------ */
+
 .contact-me-content {
-  display: flex;
-  flex-direction: column;
-  max-width: 60%;
+  width: 60%;
+}
+.contact-me-content p {
+  color: var(--black);
 }
 .icons {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 1rem;
 }
 .icon {
@@ -388,42 +402,32 @@ header {
   }
 
   .nav-list {
-    position: absolute;
-    top: 6.5rem;
-    right: 5.5%;
-    display: none;
     flex-direction: column;
     background-color: var(--grey);
-    gap: 0;
-  }
-  .nav-item {
-    text-align: center;
-    padding: 1.5rem 2rem;
-    transition: var(--transition);
+    display: none;
+
+    position: absolute;
+    top: 6rem;
+    right: 6.5rem;
+
+    z-index: 100;
   }
 
-  .nav-item:hover {
-    background-color: #ed8d8d;
-    color: var(--grey);
-  }
   .nav-link {
     color: var(--light-pink);
+    padding: 1.5rem;
   }
-  .nav-item:hover .nav-link {
-    background-color: transparent;
+  .nav-link:hover {
     color: var(--grey);
-    font-weight: 600;
+    background-color: var(--pink);
   }
 
   .project-cards .card {
     flex-basis: 32rem;
   }
 
-  .contact-me {
+  .info {
     flex-direction: column;
-  }
-  .contact-me-content {
-    max-width: 90%;
   }
 }
 
@@ -457,6 +461,10 @@ header {
 
   .slider-btn {
     width: 2rem;
+  }
+  .contact-me-content,
+  .skills-content {
+    width: 90%;
   }
 }
 
