@@ -37,6 +37,7 @@ window.addEventListener("resize", () => {
     menu.style.display = "flex";
   } else {
     menuOpen.style.display = "inline-block";
+    menuClose.style.display = "none";
     menu.style.display = "none";
   }
 });
