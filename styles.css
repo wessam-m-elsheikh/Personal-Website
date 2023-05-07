@@ -322,6 +322,11 @@ header {
 }
 .skills-content .icons {
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skills-icon {
+  flex-basis: 64px;
 }
 
 /* -------------------- CONTACTS ------------------ */
@@ -335,7 +340,7 @@ header {
 .icons {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .icon {
   width: 35px;
@@ -346,22 +351,9 @@ header {
   transform: translateY(-3px) scale(1.05);
 }
 
-.mail {
-  display: inline-block;
-  padding: 5px;
-  color: var(--grey);
-  font-size: 1.5rem;
-  border-radius: 2px;
-}
-
-.mail:hover {
-  background-color: var(--grey);
-  color: var(--light-pink);
-}
-
 /* -------------------- FOOTER ------------------ */
 footer .container {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 footer p {
@@ -419,15 +411,18 @@ footer p {
     right: 6.5rem;
 
     z-index: 100;
+
+    transition: var(--transition);
   }
 
   .nav-link {
     color: var(--light-pink);
-    padding: 1.5rem;
+    margin: 1rem;
   }
   .nav-link:hover {
     color: var(--grey);
-    background-color: var(--pink);
+    background-color: var(--light-pink);
+    /* font-weight: 500; */
   }
 
   .project-cards .card {
